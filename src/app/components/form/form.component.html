@@ -1,0 +1,38 @@
+<form [formGroup]="form">
+    <mat-form-field appearance="fill">
+      <mat-label>Nome </mat-label>
+      <input matInput type="text" formControlName="name" />
+      <mat-error *ngIf="this.form.get('name')?.errors?.['required']">
+        Nome é <strong>obrigatório</strong>
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Telefone </mat-label>
+      <input
+        matInput
+        mask="(00)0000-0000 || (00) 0 0000-0000"
+        formControlName="telephone"
+        placeholder="DDD"
+      />
+      <mat-error *ngIf="this.form.get('telephone')?.errors?.['required']">
+        Telefone é <strong>obrigatório</strong>
+      </mat-error>
+    </mat-form-field>
+  
+    <div class="buttonActions">
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        (click)="submit()"
+        [disabled]="!this.form.valid"
+      >
+        Enviar
+      </button>
+  
+      <button mat-raised-button color="accent" (click)="resetForm()">
+        Limpar
+      </button>
+    </div>
+  </form>
