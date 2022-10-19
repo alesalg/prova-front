@@ -1,1 +1,14 @@
-<p>home works!</p>
+<form-component (eventSubmit)="addDataTable($event)"></form-component>
+
+<table-component [elementRegistration]="elementRegistration"></table-component>
+
+<div *ngIf="showModal" class="modal">
+  <mat-card>
+    <mat-card-title>Cadastro Relizado com sucesso</mat-card-title>
+    <div class="action-button-modal">
+        <mat-card-actions >
+            <button class="button" mat-raised-button (click)="closeModal()" mat-button>Ok</button>
+         </mat-card-actions>
+    </div>
+  </mat-card>
+</div>

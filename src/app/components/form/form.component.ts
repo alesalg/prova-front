@@ -26,13 +26,13 @@ export class FormComponent implements OnInit {
 
   submit() {
     let formData = this.form.getRawValue()
-    formData.telephone = +formData.telephone;
     formData.id = Math.floor(
       Date.now() * Math.random() * Math.random() * Math.random()
     );
 
     this.eventSubmit.emit(formData);
     this.resetForm();
+   
   }
 
   resetForm() {
