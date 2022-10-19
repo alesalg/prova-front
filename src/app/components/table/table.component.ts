@@ -12,17 +12,17 @@ import { MatTableDataSource } from '@angular/material/table';
 import { FormModel } from 'src/app/models/formModel.models';
 
 @Component({
-  selector: 'app-table',
+  selector: 'table-component',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss'],
 })
 export class TableComponent implements OnInit, AfterViewInit, AfterViewChecked {
-  @Input() ELEMENT_DATA!: FormModel[];
+  @Input() elementRegistration!: FormModel[];
 
   public showModalDelete: boolean = false;
 
   displayedColumns: string[] = ['name', 'telephone', 'action'];
-  dataSource = new MatTableDataSource(this.ELEMENT_DATA);
+  dataSource = new MatTableDataSource(this.elementRegistration);
 
   @ViewChild(MatSort) sort!: MatSort;
 
@@ -32,7 +32,7 @@ export class TableComponent implements OnInit, AfterViewInit, AfterViewChecked {
 
   ngOnInit(): void {
     this.formCreate();
-    this.dataSource = new MatTableDataSource(this.ELEMENT_DATA);
+    this.dataSource = new MatTableDataSource(this.elementRegistration);
   }
 
   formCreate() {
@@ -53,24 +53,24 @@ export class TableComponent implements OnInit, AfterViewInit, AfterViewChecked {
   }
 
   removeData(id: number) {
-    const index = this.ELEMENT_DATA.findIndex((e) => {
-      return e.id === id;
+    const index = this.elementRegistration.findIndex((value) => {
+      return value.id === id;
     });
-    this.ELEMENT_DATA.splice(index, 1);
+    this.elementRegistration.splice(index, 1);
     this.filterTable();
     this.closeModal();
   }
 
   filterTable() {
     if (this.inputSearch.get('filter')?.value) {
-      this.dataSource = new MatTableDataSource(this.ELEMENT_DATA);
+      this.dataSource = new MatTableDataSource(this.elementRegistration);
       this.dataSource.filter = this.inputSearch
         .get('filter')
         ?.value.trim()
         .toLowerCase();
       this.dataSource.sort = this.sort;
     } else {
-      this.dataSource = new MatTableDataSource(this.ELEMENT_DATA);
+      this.dataSource = new MatTableDataSource(this.elementRegistration);
       this.dataSource.sort = this.sort;
     }
   }
