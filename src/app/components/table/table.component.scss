@@ -1,45 +1,49 @@
 .demo-table {
-    width: 100%;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+
+  .mat-cell-div {
+    text-align: center;
   }
-  
-  table {
-    width: 100%;
-    .mat-cell-div {
-        text-align: center;
-    }
+}
+
+.demo-button-container {
+  padding-bottom: 16px;
+}
+
+.demo-button+.demo-button {
+  margin-left: 8px;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.excluir {
+  color: rgba(239, 33, 33, 0.856);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(65, 63, 63, 0.6);
+  margin: 0;
+
+  mat-card-title {
+    padding-bottom: 25px;
   }
-  
-  .demo-button-container {
-    padding-bottom: 16px;
+
+  mat-card-actions {
+    text-align: center !important;
   }
-  
-  .demo-button + .demo-button {
-    margin-left: 8px;
-  }
-  
-  .mat-form-field {
-    font-size: 14px;
-    width: 100%;
-  }
-  .excluir {
-    color: rgba(239, 33, 33, 0.856);
-  }
-  
-  .modal {
-    position: fixed;
-    top: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(65, 63, 63, 0.6);
-    margin: 0;
-    mat-card-title {
-      padding-bottom: 25px;
-    }
-    mat-card-actions {
-        text-align: center !important;
-    }
 }

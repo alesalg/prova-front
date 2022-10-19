@@ -12,3 +12,14 @@
     </div>
   </mat-card>
 </div>
+
+<div *ngIf="showModalError" class="modal">
+  <mat-card>
+    <mat-card-title>Nome ou Telefone já existem na lista</mat-card-title>
+    <div class="action-button-modal">
+        <mat-card-actions >
+            <button class="button" mat-raised-button (click)="showModalError = false" mat-button>Cadastrar novamente</button>
+         </mat-card-actions>
+    </div>
+  </mat-card>
+</div>

@@ -1,19 +1,19 @@
 form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    // gap: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // gap: 12px;
+}
+
+mat-form-field {
+  width: 30%;
+  @media screen and (max-width: 800px) {
+    width: 90%;
   }
-  
-  mat-form-field {
-    width: 30%;
-    @media screen and (max-width: 800px) {
-      width: 90%;
-    }
-  }
-  
-  .buttonActions {
-    display: flex;
-    gap: 9px;
-  }
+}
+
+.buttonActions {
+  display: flex;
+  gap: 9px;
+}

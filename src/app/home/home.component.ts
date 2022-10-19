@@ -4,19 +4,24 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
   public elementRegistration: FormModel[] = [];
-  public showModal: boolean = false;
+  public showModal = false;
+  public showModalError = false;
 
   constructor() {}
 
   ngOnInit(): void {}
 
   addDataTable(value: FormModel) {
-    this.elementRegistration.push(value);
-    this.showModal = true;
+    if (!this.elementRegistration.some((item) => item.name === value.name || item.telephone === value.telephone)) {
+      this.elementRegistration.push(value);
+      this.showModal = true;
+    } else {
+      this.showModalError = true;
+    }
   }
 
   closeModal() {
